@@ -1,0 +1,95 @@
+/* cascating stylesheet o elemento que entra por ultimo na cascata é aquele que tem mais força*/
+/* id é um identificador unico de uma tag sendo o seletor #nome-do-id* se ocorre id="name" não pode haver outro name na pagina toda*/
+/*class classificação de uma ou mais tags, seletor é assim: .nome-da-classe, pode ter mais de uma classe em um elemento*/
+
+* {
+  margin: 0;
+}
+html,
+body {
+  --black: hsl(240, 6%, 13%);
+  --grey: hsl(240, 9%, 89%);
+
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+main {
+  background: url(imgs/Mobile.png) no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
+}
+
+.conteiner {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  color: var(--grey);
+}
+
+.avatar {
+  width: 10rem;
+  margin: 11.5rem auto 0;
+
+  position: relative;
+}
+
+.avatar span {
+  position: absolute;
+  top: -15px;
+  z-index: 1; /* eixo de profundidade em terceira dimensão, voltar a imagem para frente da otura*/
+}
+
+.avatar > img {
+  /* O símbolo > se refere ao nível das imagens, pois na tag img existem duas imagens e so quero mexer na img da foto pessoal*/
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+
+  clip-path: polygon(
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%,
+    0 25%
+  ); /* para criar o polígno da imagem usamos essa tag - essa é a pagina para obter as formas diversas no css: https://bennettfeely.com/clippy/*/
+}
+
+h1 {
+  font-size: 2rem;
+
+  margin-top: 1.5rem;
+}
+
+a {
+  color: var(--grey);
+  text-decoration: none;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  margin-top: 4rem;
+  list-style: none; /* tirar os pontos da ul*/
+  padding: 0; /* alinhar*/
+  display: flex; /* elementos um ao lado do outro*/
+  gap: 0.5rem;
+
+  justify-content: center; /* centralizar as imagens, liberado por causa do display flex que liberou essa função*/
+}
